@@ -47,7 +47,7 @@ class Boy:
                 self.SLEEP: [(space_down, self.IDLE),
                              (lambda e: (arrow_down(e) or arrow_up(e)) and moving(e), self.RUN)],
                 self.RUN: [(lambda e: (arrow_down(e) or arrow_up(e)) and not moving(e), self.IDLE)],
-                self.AUTO_RUN: [],
+                self.AUTO_RUN: [(time_out, self.IDLE)],
             }
         )
 
