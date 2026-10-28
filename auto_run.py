@@ -2,6 +2,8 @@ from pico2d import get_canvas_width
 
 
 class AutoRun:
+    SPEED = 15
+
     def __init__(self, boy):
         self.boy = boy
 
@@ -13,7 +15,7 @@ class AutoRun:
 
     def do(self):
         self.boy.frame = (self.boy.frame + 1) % 8
-        self.boy.x += self.boy.face_dir * 5
+        self.boy.x += self.boy.face_dir * AutoRun.SPEED
         if self.boy.x >= get_canvas_width() - 50:
             self.boy.x = get_canvas_width() - 50
             self.boy.face_dir = -1
