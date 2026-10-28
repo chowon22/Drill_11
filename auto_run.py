@@ -3,6 +3,7 @@ from pico2d import get_canvas_width
 
 class AutoRun:
     SPEED = 15
+    SCALE = 2
 
     def __init__(self, boy):
         self.boy = boy
@@ -24,7 +25,8 @@ class AutoRun:
             self.boy.face_dir = 1
 
     def draw(self):
+        size = 100 * AutoRun.SCALE
         if self.boy.face_dir == 1:
-            self.boy.image.clip_draw(self.boy.frame * 100, 100, 100, 100, self.boy.x, self.boy.y)
+            self.boy.image.clip_draw(self.boy.frame * 100, 100, 100, 100, self.boy.x, self.boy.y, size, size)
         else:
-            self.boy.image.clip_draw(self.boy.frame * 100, 0, 100, 100, self.boy.x, self.boy.y)
+            self.boy.image.clip_draw(self.boy.frame * 100, 0, 100, 100, self.boy.x, self.boy.y, size, size)
