@@ -10,6 +10,7 @@ class AutoRun:
 
     def do(self):
         self.boy.frame = (self.boy.frame + 1) % 8
+        self.boy.x += self.boy.face_dir * 5
 
     def draw(self):
         if self.boy.face_dir == 1:
