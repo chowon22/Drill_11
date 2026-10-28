@@ -48,10 +48,7 @@ class Boy:
         if event.type in (SDL_KEYDOWN, SDL_KEYUP) and event.key in (SDLK_LEFT, SDLK_RIGHT):
             # 눌린 방향키를 더하고 뗀 방향키를 빼서, 양쪽을 동시에 눌러도 dir이 맞게 유지된다
             step = 1 if event.key == SDLK_RIGHT else -1
-            if event.type == SDL_KEYDOWN:
-                self.dir += step
-            else:
-                self.dir -= step
+            self.dir += step if event.type == SDL_KEYDOWN else -step
         self.state_machine.handle_state_event(('INPUT', event))
 
     def update(self):
