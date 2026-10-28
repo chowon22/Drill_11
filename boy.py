@@ -2,6 +2,22 @@ from pico2d import load_image, get_time, clamp, get_canvas_width, SDL_KEYDOWN, S
 from transitions import Machine
 
 
+def space_down(e):
+    return e[0] == 'INPUT' and e[1].type == SDL_KEYDOWN and e[1].key == SDLK_SPACE
+
+
+def arrow_down(e):
+    return e[0] == 'INPUT' and e[1].type == SDL_KEYDOWN and e[1].key in (SDLK_LEFT, SDLK_RIGHT)
+
+
+def arrow_up(e):
+    return e[0] == 'INPUT' and e[1].type == SDL_KEYUP and e[1].key in (SDLK_LEFT, SDLK_RIGHT)
+
+
+def time_out(e):
+    return e[0] == 'TIME_OUT'
+
+
 class Boy:
     states = ['IDLE', 'SLEEP', 'RUN']
     transitions = [
