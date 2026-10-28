@@ -16,12 +16,14 @@ class AutoRun:
 
     def do(self):
         self.boy.frame = (self.boy.frame + 1) % 8
+        # 커진 몸집만큼 여유를 두고, 화면 끝에 닿으면 방향을 뒤집는다
+        half_width = 50 * AutoRun.SCALE
         self.boy.x += self.boy.face_dir * AutoRun.SPEED
-        if self.boy.x >= get_canvas_width() - 50:
-            self.boy.x = get_canvas_width() - 50
+        if self.boy.x >= get_canvas_width() - half_width:
+            self.boy.x = get_canvas_width() - half_width
             self.boy.face_dir = -1
-        elif self.boy.x <= 50:
-            self.boy.x = 50
+        elif self.boy.x <= half_width:
+            self.boy.x = half_width
             self.boy.face_dir = 1
 
     def draw(self):
