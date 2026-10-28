@@ -35,7 +35,9 @@ LEC12 캐릭터 컨트롤러(Idle / Sleep / Run 상태를 가진 소년)에 **�
 | Idle | `a` 키 누름 | AutoRun |
 | Idle | 방향키 (이동 중) | Run |
 | Sleep | Space 누름 | Idle |
+| Sleep | `a` 키 누름 | AutoRun |
 | Sleep | 방향키 (이동 중) | Run |
+| Run | `a` 키 누름 | AutoRun |
 | Run | 방향키 (정지) | Idle |
 | AutoRun | 5초 경과 (TIME_OUT) | Idle |
 | AutoRun | 방향키 누름 | Run |
